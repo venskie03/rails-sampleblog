@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @movielist %>
+
+<div>
+  <%= link_to "Edit this movielist", edit_movielist_path(@movielist) %> |
+  <%= link_to "Back to movielists", movielists_path %>
+
+  <%= button_to "Destroy this movielist", @movielist, method: :delete %>
+</div>
