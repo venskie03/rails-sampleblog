@@ -1,0 +1,26 @@
+  <div class="container bg-[#f5f6fa] w-max mt-5 p-10 m-auto rounded-lg shadow-lg shadow-gray-400">
+      <h1 class="font-bold text-center text-4xl">STUDENT LIST</h1>
+<p class="text-center border-solid border-2 border-black shadow-lg shadow-gray-300 mt-3 mb-4"><%= link_to 'Add New Student', new_student_path %></p>
+    <table class="w-max rounded-lg shadow-lg shadow-gray-400 h-10">
+        <thead  class="p-4 bg-sky-400 rounded-lg">
+            <tr>
+                <th class="p-2">First_Name</th>
+                <th class="pl-3">Last_Name</th>
+                <th class="pl-4">Contact Number</th>
+                <th>Operation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @students.each do |student|%>
+                <tr>
+                    <td class="p-4"><%= student.first_name%></td>
+                    <td class="pl-5"><%= student.last_name%></td>
+                    <td class="pl-5 "><%= student.contactno%></td>
+                    <td class="pr-5 p-5 flex"> <div class="text-green-500"><%= link_to 'View', student %></div>
+                    <div class="text-red-500 ml-5"><%= link_to "Delete", student, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %> </div> 
+                    <div class="pl-4 text-sky-500"> <%= link_to 'Edit', edit_student_path(student) %> </div> </td>
+                    </tr>
+                <%end%>
+                </tbody>
+    </table>
+  </div>

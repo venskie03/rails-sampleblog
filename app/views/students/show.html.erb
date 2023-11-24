@@ -1,0 +1,13 @@
+<div class="containter  bg-[#f5f6fa] w-max mt-5 p-10 m-auto rounded-lg shadow-lg shadow-gray-400">
+    <h1 class="text-center font-semibold text-3xl mb-4">STUDENT DETAILS</h1>
+<div class="flex p-4">
+    <strong>First_Name:</strong><p class="ml-3"><%= @student.first_name%></p><br>
+    </div>
+<div class="flex p-4">
+    <strong>Last_Name:</strong><p class="ml-3"><%= @student.last_name%></p><br>
+    </div>
+    <div class="flex p-4">
+    <strong>Contactno:</strong><p class="ml-3"><%= @student.contactno%></p><br>
+    </div>
+<%= link_to 'Back', students_path, class: 'cursor-pointer text-sky-500 ml-28' %>
+</div>

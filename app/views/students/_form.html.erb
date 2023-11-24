@@ -1,0 +1,47 @@
+<%= form_with model: @student do |form| %>
+
+  <div class="field mb-3 grid text-center">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, class: 'form-control rounded-lg text-center font-bold shadow-lg shadow-gray-200 p-1' %>
+    <div id="errors" class="text-center text-red-400">
+      <ul>
+        <% @student.errors[:first_name].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="field mb-3 grid text-center">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, class: 'form-control rounded-lg text-center font-bold shadow-lg shadow-gray-200 p-1' %>
+      <div id="errors" class="text-center text-red-400">
+      <ul>
+        <% @student.errors[:last_name].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="field grid text-center">
+    <%= form.label :contactno %>
+    <%= form.text_field :contactno, class: 'form-control rounded-lg text-center font-bold shadow-lg shadow-gray-200 p-1' %>
+      <div id="errors" class="text-center text-red-400">
+      <ul>
+        <% @student.errors[:contactno].each do |error| %>
+          <li><%= error %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="actions border-solid border-2 border-black mt-7 mb-5   rounded-lg p-2 text-center shadow-xl shadow-gray-300 cursor-pointer">
+    <%= form.submit %>
+  </div>
+
+
+    <%= link_to 'Back', students_path, class: 'cursor-pointer text-sky-500 ml-24' %>
+
+
+<% end %>
